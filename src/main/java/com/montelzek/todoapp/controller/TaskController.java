@@ -30,4 +30,14 @@ public class TaskController {
 
         return "tasks/list-tasks";
     }
+
+    @GetMapping("/showFormForAdd")
+    public String showFormForAdd(Model theModel) {
+
+        Task theTask = new Task();
+
+        theModel.addAttribute("task", theTask);
+
+        return "tasks/task-form";
+    }
 }
