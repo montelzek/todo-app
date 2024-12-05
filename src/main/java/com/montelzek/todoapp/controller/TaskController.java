@@ -74,4 +74,14 @@ public class TaskController {
 
         return "redirect:/tasks/list";
     }
+
+    @GetMapping("/changeStatus")
+    public String changeStatus(@RequestParam("taskId") int theId, Model theModel) {
+
+        Task theTask = taskService.findById(theId);
+        theTask.setCompleted(!theTask.isCompleted());
+        taskService.save(theTask);
+
+        return "redirect:/tasks/list";
+    }
 }
