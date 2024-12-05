@@ -2,6 +2,7 @@ package com.montelzek.todoapp.entity;
 
 import jakarta.persistence.*;
 import org.hibernate.annotations.CreationTimestamp;
+import org.springframework.format.annotation.DateTimeFormat;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;
@@ -22,6 +23,7 @@ public class Task {
     @JoinColumn(name = "priority_id")
     private Priority priority;
 
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
     @Column(name = "due_date")
     private LocalDate dueDate;
 
