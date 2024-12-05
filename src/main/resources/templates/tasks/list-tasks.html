@@ -13,6 +13,10 @@
   body {
     font-family: Poppins, sans-serif;
   }
+  .table td {
+      padding-top: 1rem !important;
+      padding-bottom: 1rem !important;
+  }
 </style>
 <body>
   <div class="container py-5">
@@ -37,23 +41,27 @@
       </thead>
 
       <tbody>
-      <tr th:each="tempTask : ${tasks}">
-        <td th:text="${tempTask.title}" />
-        <td>
-          <span class="badge" th:classappend="${tempTask.priority.grade == 'High' ? 'bg-danger' :
+      <tr th:each="tempTask : ${tasks}" th:classappend="${tempTask.isCompleted() ? 'table-secondary' : ''}">
+        <td class="align-middle" th:text="${tempTask.title}" />
+        <td class="align-middle">
+          <span class="badge w-75" th:classappend="${tempTask.priority.grade == 'High' ? 'bg-danger' :
                   (tempTask.priority.grade == 'Medium' ? 'bg-warning' : 'bg-success')}"
                   th:text="${tempTask.priority.grade}" />
         </td>
-        <td th:text="${tempTask.dueDate}" />
-        <td>
-          <span class="badge" th:classappend="${tempTask.isCompleted ? 'bg-success' : 'bg-secondary'}"
-                th:text="${tempTask.isCompleted ? 'Completed' : 'Pending'}"></span>
+        <td class="align-middle" th:text="${tempTask.dueDate}" />
+        <td class="align-middle">
+          <span class="badge w-75" th:classappend="${tempTask.isCompleted ? 'bg-secondary' : 'bg-success'}"
+                th:text="${tempTask.isCompleted ? 'Completed' : 'Active'}"></span>
         </td>
-        <td>
-            <a th:href="@{/tasks/changeStatus(taskId=${tempTask.id})}" class="btn btn-success btn-sm mb-3">Complete</a>
-            <a th:href="@{/tasks/showFormForUpdate(taskId=${tempTask.id})}" class="btn btn-info btn-sm mb-3">Update</a>
-            <a th:href="@{/tasks/delete(taskId=${tempTask.id})}" class="btn btn-danger btn-sm mb-3"
-               onclick="if (!(confirm('Are you sure you want to delete this task?'))) return false">Delete</a>
+        <td class="align-middle">
+            <div class="d-flex gap-3 justify-content-center h-100">
+                <a th:href="@{/tasks/changeStatus(taskId=${tempTask.id})}" class="btn btn-sm w-75"
+                   th:classappend="${tempTask.isCompleted ? 'btn-secondary' : 'btn-success'}"
+                   th:text="${tempTask.isCompleted ? 'Undo' : 'Complete'}">Complete</a>
+                <a th:href="@{/tasks/showFormForUpdate(taskId=${tempTask.id})}" class="btn btn-info btn-sm w-75">Update</a>
+                <a th:href="@{/tasks/delete(taskId=${tempTask.id})}" class="btn btn-danger btn-sm w-75"
+                   onclick="if (!(confirm('Are you sure you want to delete this task?'))) return false">Delete</a>
+            </div>
         </td>
       </tr>
       </tbody>
