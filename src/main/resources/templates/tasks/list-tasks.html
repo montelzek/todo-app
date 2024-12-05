@@ -32,6 +32,7 @@
         <th>Priority</th>
         <th>Due</th>
         <th>Status</th>
+        <th>Action</th>
       </tr>
       </thead>
 
@@ -47,6 +48,9 @@
         <td>
           <span class="badge" th:classappend="${tempTask.isCompleted ? 'bg-success' : 'bg-secondary'}"
                 th:text="${tempTask.isCompleted ? 'Completed' : 'Pending'}"></span>
+        </td>
+        <td>
+            <a th:href="@{/tasks/showFormForUpdate}" class="btn btn-primary btn-sm mb-3">Update</a>
         </td>
       </tr>
       </tbody>
