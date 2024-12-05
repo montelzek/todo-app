@@ -49,4 +49,12 @@ public class TaskController {
 
         return "tasks/task-form";
     }
+
+    @PostMapping("/save")
+    public String saveTask(@ModelAttribute("task") Task theTask) {
+
+        taskService.save(theTask);
+
+        return "redirect:/tasks/list";
+    }
 }
