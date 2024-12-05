@@ -50,7 +50,7 @@
                 th:text="${tempTask.isCompleted ? 'Completed' : 'Pending'}"></span>
         </td>
         <td>
-            <a th:href="@{/tasks/showFormForUpdate}" class="btn btn-primary btn-sm mb-3">Update</a>
+            <a th:href="@{/tasks/showFormForUpdate(taskId=${tempTask.id})}" class="btn btn-primary btn-sm mb-3">Update</a>
         </td>
       </tr>
       </tbody>
