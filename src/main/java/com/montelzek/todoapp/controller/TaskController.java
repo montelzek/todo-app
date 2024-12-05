@@ -7,10 +7,7 @@ import com.montelzek.todoapp.service.TaskService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -42,6 +39,18 @@ public class TaskController {
     public String showFormForAdd(Model theModel) {
 
         Task theTask = new Task();
+        List<Priority> priorities = priorityService.findAll();
+
+        theModel.addAttribute("task", theTask);
+        theModel.addAttribute("priorities", priorities);
+
+        return "tasks/task-form";
+    }
+
+    @GetMapping("/showFormForUpdate")
+    public String showFormForUpdate(@RequestParam("taskId") int theId, Model theModel) {
+
+        Task theTask = taskService.findById(theId);
         List<Priority> priorities = priorityService.findAll();
 
         theModel.addAttribute("task", theTask);
