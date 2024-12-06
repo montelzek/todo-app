@@ -13,4 +13,6 @@ public interface TaskService {
     Task save(Task theTask);
 
     void deleteById(int theId);
+
+    long getTaskCount();
 }
