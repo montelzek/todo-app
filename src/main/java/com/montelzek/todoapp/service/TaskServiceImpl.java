@@ -48,4 +48,14 @@ public class TaskServiceImpl implements TaskService{
     public void deleteById(int theId) {
         taskRepository.deleteById(theId);
     }
+
+    public long getTaskCount() {
+        return taskRepository.count();
+    }
+
+    @Override
+    public long getTaskCountByCompleted() {
+        boolean isCompleted = true;
+        return taskRepository.countByisCompleted(isCompleted);
+    }
 }
