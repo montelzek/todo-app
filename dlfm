@@ -1,0 +1,218 @@
+[33mcommit 2256ecce66e035757164e93b009e4433f900021c[m[33m ([m[1;36mHEAD -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m)[m
+Author: montelzek <patrykmatras378@gmail.com>
+Date:   Thu Dec 5 19:34:37 2024 +0100
+
+    Some styling changes
+
+[33mcommit 5501b146a8b8179a439d1b3a4771dd9257809354[m
+Author: montelzek <patrykmatras378@gmail.com>
+Date:   Thu Dec 5 18:54:19 2024 +0100
+
+    Add changeStatus method to toggle task completion status
+    
+    - Implemented `changeStatus` method to handle GET requests for changing the task's completion status.
+    - Fetches the task by `taskId` and toggles its `completed` status.
+    - Saves the updated task and redirects to the task list view.
+
+[33mcommit c6705da0476f107d2b62f0302a12865dc5c96cb2[m
+Author: montelzek <patrykmatras378@gmail.com>
+Date:   Thu Dec 5 18:53:30 2024 +0100
+
+    Added button for changing status of the task
+
+[33mcommit edb4515d222d3f4e0dfeecf560cc94ee1135e75c[m
+Author: montelzek <patrykmatras378@gmail.com>
+Date:   Thu Dec 5 18:14:46 2024 +0100
+
+    Added adnotation @DateTimeFormat to dueDate field to fix bug with no prepopulation date input when updating the task
+
+[33mcommit 38b5dfbfe0fb509c64e06973fa1b494182d74f06[m
+Author: montelzek <patrykmatras378@gmail.com>
+Date:   Thu Dec 5 17:38:40 2024 +0100
+
+    Added endpoint for deleting tasks
+
+[33mcommit d4bbfd8349f33d8ac5aabaa76b037007e0dac843[m
+Author: montelzek <patrykmatras378@gmail.com>
+Date:   Thu Dec 5 17:37:46 2024 +0100
+
+    Added action button for deleting task
+
+[33mcommit 5a1db115212d3a690ce5b6210ac411fcdbb295f2[m
+Author: montelzek <patrykmatras378@gmail.com>
+Date:   Thu Dec 5 17:29:59 2024 +0100
+
+    Added hidden input for updating task
+
+[33mcommit 98a9dc497cf7580370a4f276bf88dd3c9875c099[m
+Author: montelzek <patrykmatras378@gmail.com>
+Date:   Thu Dec 5 17:29:22 2024 +0100
+
+    FIxed bug with updating
+
+[33mcommit c159bae76e9f73809d2f58f1ed86ce028176062c[m
+Author: montelzek <patrykmatras378@gmail.com>
+Date:   Thu Dec 5 17:20:02 2024 +0100
+
+    CHanged title
+
+[33mcommit 75fcc627f2ea99bb92809cc7d1b39abd3a572b7e[m
+Author: montelzek <patrykmatras378@gmail.com>
+Date:   Thu Dec 5 17:15:07 2024 +0100
+
+    Add showFormForUpdate method to handle task update form
+
+[33mcommit 7eb949e9e3f4b6d9fd81040d2f88fbde5b51bac1[m
+Author: montelzek <patrykmatras378@gmail.com>
+Date:   Thu Dec 5 17:11:41 2024 +0100
+
+    Created new column 'Action' and added button for updating task
+
+[33mcommit b167339f868faf60781558e663159c060fa3882d[m
+Author: montelzek <patrykmatras378@gmail.com>
+Date:   Thu Dec 5 16:57:31 2024 +0100
+
+    Add endpoint to save tasks
+
+[33mcommit 361ecbb5a6986a8cf37552c8b292a89f947406a9[m
+Author: montelzek <patrykmatras378@gmail.com>
+Date:   Thu Dec 5 00:30:45 2024 +0100
+
+    Add endpoint to save tasks
+
+[33mcommit 72e54f82abddba3ac8daa9ce12d3b66d753ad8ff[m
+Author: montelzek <patrykmatras378@gmail.com>
+Date:   Thu Dec 5 00:27:27 2024 +0100
+
+    Added PrirityService field and added 'pririties' to model view
+
+[33mcommit d67ba933f5f204efac03a8b3567666eee6500f93[m
+Author: montelzek <patrykmatras378@gmail.com>
+Date:   Thu Dec 5 00:24:00 2024 +0100
+
+    Implemented task creation form
+
+[33mcommit 90b248eab05480ae1037a8df061cb5e3c603f46f[m
+Author: montelzek <patrykmatras378@gmail.com>
+Date:   Wed Dec 4 23:34:22 2024 +0100
+
+    Add GET mapping for /showFormForAdd endpoint
+    Create new Task object and add it to the model
+    Return "tasks/task-form" view to display the form
+
+[33mcommit 774d488fac07161a82104da2f1adcce8f5fd021e[m
+Author: montelzek <patrykmatras378@gmail.com>
+Date:   Wed Dec 4 23:28:54 2024 +0100
+
+    Creted a Add Task button
+
+[33mcommit b75a4c2a4f8ff4486cbe6a2e89baf9f6258cf2b1[m
+Author: montelzek <patrykmatras378@gmail.com>
+Date:   Wed Dec 4 20:41:11 2024 +0100
+
+    Enhance task display in list-tasks.html
+    
+    * Adds Bootstrap classes to the priority and completed status columns for visual clarity.
+    * Uses Thymeleaf to conditionally apply the appropriate classes based on priority and completion status.
+
+[33mcommit 21d8ed92ae2fc85fe44f2932f4ba6d8cb2f51274[m
+Author: montelzek <patrykmatras378@gmail.com>
+Date:   Wed Dec 4 19:54:21 2024 +0100
+
+    Fixed bug with priority
+
+[33mcommit 2031af1bbe8453c619a1d34f5359830a6580ea54[m
+Author: montelzek <patrykmatras378@gmail.com>
+Date:   Wed Dec 4 19:41:43 2024 +0100
+
+    Add meta refresh tag to redirect to tasks/list
+
+[33mcommit 1dc05b5a11c22c62407544881693ab0c32649722[m
+Author: montelzek <patrykmatras378@gmail.com>
+Date:   Wed Dec 4 19:21:25 2024 +0100
+
+    Add endpoint to list tasks
+    
+    * Implements the `/list` endpoint to retrieve all tasks from the service.
+    * Adds the retrieved tasks to the Model for display in the `list-tasks` view.
+
+[33mcommit cbf467eb8fe37dbf12b1571e084e32b3bf80126a[m
+Author: montelzek <patrykmatras378@gmail.com>
+Date:   Wed Dec 4 19:17:07 2024 +0100
+
+    Create TaskController class
+    
+    * Sets up the basic structure for the TaskController.
+    * Injects the TaskService dependency.
+
+[33mcommit 304b00d99036312cb9883befcbaf0b8b8e8a81d0[m
+Author: montelzek <patrykmatras378@gmail.com>
+Date:   Wed Dec 4 19:06:00 2024 +0100
+
+    Added @Service and @Autowired annotations
+
+[33mcommit a788e8d588d455bded4ab33f0d0cf2ece8b73cff[m
+Author: montelzek <patrykmatras378@gmail.com>
+Date:   Wed Dec 4 19:05:01 2024 +0100
+
+    Added implementation for TaskService
+
+[33mcommit d1f13e2967c7806ccea4c073809824b493766110[m
+Author: montelzek <patrykmatras378@gmail.com>
+Date:   Wed Dec 4 18:58:27 2024 +0100
+
+    Added TaskService interface with basic crud methods
+
+[33mcommit 0deb25339f2408eb8af095b75052a83de7c42352[m
+Author: montelzek <patrykmatras378@gmail.com>
+Date:   Wed Dec 4 18:55:02 2024 +0100
+
+    Added implementation for PriorityService
+
+[33mcommit c9f05233d6f0a2978ddb824d6ef26850823e98e4[m
+Author: montelzek <patrykmatras378@gmail.com>
+Date:   Wed Dec 4 18:48:48 2024 +0100
+
+    Added PriorityService interface with findAll method
+
+[33mcommit 5c8d247ca494b515fc8284845857fea047167cf3[m
+Author: montelzek <patrykmatras378@gmail.com>
+Date:   Wed Dec 4 18:44:27 2024 +0100
+
+    Adde TasRepository interface
+
+[33mcommit 09919c2d9ef783cb97a98d03fcf13d5674f75ae6[m
+Author: montelzek <patrykmatras378@gmail.com>
+Date:   Wed Dec 4 16:23:29 2024 +0100
+
+    Add PriorityRepository interface
+
+[33mcommit 9f7f3c0fc2d5c2a3d6e4b731b6c2cc7b9aafd7b0[m
+Author: montelzek <patrykmatras378@gmail.com>
+Date:   Wed Dec 4 16:14:02 2024 +0100
+
+    Created Entity class for Task
+
+[33mcommit fdedcf657329ca204d53cc986f6c105b9beb2b41[m
+Author: montelzek <patrykmatras378@gmail.com>
+Date:   Wed Dec 4 16:11:40 2024 +0100
+
+    Creted Entity class for Priority
+
+[33mcommit 52bb40d920482e0d012a98805b47b5de0e6b37cc[m
+Author: montelzek <patrykmatras378@gmail.com>
+Date:   Wed Dec 4 12:00:43 2024 +0100
+
+    Setup JDBC connection
+
+[33mcommit 25822ca92f873fb27d2d1529143cad1f8a8de483[m
+Author: montelzek <patrykmatras378@gmail.com>
+Date:   Wed Dec 4 00:05:47 2024 +0100
+
+    Initial commit
+
+[33mcommit bbcb37dd4a4a5e6d1a5366b3ea6bd22fb23da428[m
+Author: montelzek <129325257+montelzek@users.noreply.github.com>
+Date:   Tue Dec 3 23:45:10 2024 +0100
+
+    Initial commit

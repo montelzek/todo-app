@@ -13,32 +13,36 @@
     body {
         font-family: Poppins, sans-serif;
     }
+    .centered-form {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
 </style>
 <body>
     <div class="container">
 
-        <h3>To Do App</h3>
+        <h3 class="text-center mb-4">To Do App</h3>
         <hr>
 
-        <p class="h4 mb-4">Save Task</p>
+        <p class="text-center h4 mb-4">Save Task</p>
 
-        <form action="#" th:action="@{/tasks/save}" th:object="${task}" method="POST">
+        <form class="centered-form" action="#" th:action="@{/tasks/save}" th:object="${task}" method="POST">
 
             <input type="hidden" th:field="*{id}">
-
+            Title
             <input type="text" th:field="*{title}"
-                   class="form-control mb-4 w-25" placeholder="Title">
-
+                   class="form-control mb-4 w-25" required pattern=".*\S+.*">
+            Priority
             <select class="form-select mb-4 w-25" th:field="*{priority}">
-                <option value="" disabled selected>Select Priority</option>
                 <option th:each="tempPriority : ${priorities}"
                         th:value="${tempPriority.priorityId}"
                         th:text="${tempPriority.grade}">
                 </option>
             </select>
-
+            Due
             <input type="date" th:field="*{dueDate}"
-                   class="form-control mb-4 w-25" placeholder="Due date">
+                   class="form-control mb-4 w-25" required>
 
 
             <button type="submit" class="btn btn-info col-2">Save</button>
@@ -46,8 +50,9 @@
         </form>
 
         <hr>
-        <a th:href="@{/tasks/list}" class="btn btn-primary btn-md mb-3">Back to Tasks List</a>
-
+        <div class="d-flex justify-content-center">
+            <a th:href="@{/tasks/list}" class="btn btn-primary col-2">Back to Tasks List</a>
+        </div>
     </div>
 </body>
 </html>
