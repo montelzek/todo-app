@@ -30,7 +30,10 @@ public class TaskController {
 
         List<Task> theTasks = taskService.findAll();
 
+        long taskCounter = taskService.getTaskCount();
+
         theModel.addAttribute("tasks", theTasks);
+        theModel.addAttribute("taskCounter", taskCounter);
 
         return "tasks/list-tasks";
     }
