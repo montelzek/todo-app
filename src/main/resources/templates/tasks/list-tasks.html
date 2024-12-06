@@ -32,7 +32,20 @@
       <div class="d-flex justify-content-center">
           <a th:href="@{/tasks/showFormForAdd}" class="btn btn-primary btn-md mb-3">Add Task</a>
       </div>
-
+      <div class="mb-4 mt-2 text-center">
+        <span class="me-4">
+            <strong>Total Tasks:</strong>
+            <span th:text="${taskCounter}">0</span>
+        </span>
+              <span class="me-4">
+            <strong>Completed:</strong>
+            <span th:text="${completedTaskCounter}">0</span>
+        </span>
+              <span>
+            <strong>Completion Rate:</strong>
+            <span th:text="${percentageOfCompletedTask + '%'}">0%</span>
+        </span>
+      </div>
     <table class="text-center table table-bordered">
 
       <thead class="table-dark">
