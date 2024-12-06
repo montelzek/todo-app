@@ -15,4 +15,6 @@ public interface TaskService {
     void deleteById(int theId);
 
     long getTaskCount();
+
+    long getTaskCountByCompleted();
 }
