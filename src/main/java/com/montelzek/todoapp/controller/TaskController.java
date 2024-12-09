@@ -32,7 +32,7 @@ public class TaskController {
 
         long taskCounter = taskService.getTaskCount();
         long completedTaskCounter = taskService.getTaskCountByCompleted();
-        double percentageOfCompletedTask = (double) completedTaskCounter / taskCounter * 100;
+        double percentageOfCompletedTask = Math.round(((double) completedTaskCounter / taskCounter * 100) * 100.0) / 100.0;
 
         theModel.addAttribute("tasks", theTasks);
         theModel.addAttribute("taskCounter", taskCounter);
