@@ -23,6 +23,6 @@ CREATE TABLE IF NOT EXISTS tasks (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 INSERT INTO tasks (title, priority_id, due_date, is_completed) VALUES
-('Zrobić zakupy', 3, DATE_ADD(CURDATE(), INTERVAL 2 DAY), false),
-('Napisać raport', 2, DATE_ADD(CURDATE(), INTERVAL 5 DAY), false),
-('Spotkanie z zespołem', 1, DATE_ADD(CURDATE(), INTERVAL 1 DAY), true);
+('Go for a 30-minute walk in the park', 3, DATE_ADD(CURDATE(), INTERVAL 2 DAY), false),
+('Cook a new recipe for dinner tonight', 2, DATE_ADD(CURDATE(), INTERVAL 5 DAY), false),
+('Organize the books on your bookshelf by color', 1, DATE_ADD(CURDATE(), INTERVAL 1 DAY), true);
