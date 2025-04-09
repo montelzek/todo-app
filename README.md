@@ -11,7 +11,6 @@ This is a simple web application for managing tasks, built using the Spring Boot
 *   **Delete Task:** Remove tasks from the list.
 *   **Change Status:** Mark tasks as completed or active (toggle).
 *   **Priorities:** Tasks are associated with priorities (e.g., High, Medium, Low) which are visually indicated.
-*   **Visual Cues:** Completed tasks and different priority levels are visually distinct in the list.
 
 ## Technology Stack
 
