@@ -9,9 +9,9 @@ services:
       mysqldb:
         condition: service_healthy
     environment:
-      SPRING_DATASOURCE_URL: jdbc:mysql://mysqldb:3306/todoapp?useSSL=false&allowPublicKeyRetrieval=true&createDatabaseIfNotExist=true&autoReconnect=true
-      SPRING_DATASOURCE_USERNAME: root
-      SPRING_DATASOURCE_PASSWORD: root
+      SPRING_DATASOURCE_URL: jdbc:mysql://mysqldb:3306/todo?useSSL=false&allowPublicKeyRetrieval=true&createDatabaseIfNotExist=true&autoReconnect=true&useUnicode=true&characterEncoding=UTF-8
+      SPRING_DATASOURCE_USERNAME: appuser
+      SPRING_DATASOURCE_PASSWORD: apppass
       SPRING_JPA_HIBERNATE_DDL_AUTO: update
     networks:
       - spring-mysql
@@ -23,13 +23,16 @@ services:
     ports:
       - "3306:3306"
     environment:
-      MYSQL_DATABASE: todoapp
+      MYSQL_DATABASE: todo
       MYSQL_ROOT_PASSWORD: root
       MYSQL_USER: appuser
       MYSQL_PASSWORD: apppass
     volumes:
       - mysql-data:/var/lib/mysql
       - ./src/main/resources/db/init.sql:/docker-entrypoint-initdb.d/init.sql
+    command:
+      --character-set-server=utf8mb4
+      --collation-server=utf8mb4_unicode_ci
     networks:
       - spring-mysql
     healthcheck:
