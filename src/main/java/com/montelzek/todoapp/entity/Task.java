@@ -46,6 +46,15 @@ public class Task {
         this.createdAt = createdAt;
     }
 
+    public Task(int id, String title, Priority priority, LocalDate dueDate, boolean isCompleted, LocalDateTime createdAt) {
+        this.id = id;
+        this.title = title;
+        this.priority = priority;
+        this.dueDate = dueDate;
+        this.isCompleted = isCompleted;
+        this.createdAt = createdAt;
+    }
+
     public int getId() {
         return id;
     }
