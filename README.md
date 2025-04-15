@@ -26,7 +26,7 @@ This is a simple web application for managing tasks, built using the Spring fram
 To run this application locally, you will need:
 - Java Development Kit (JDK) 23
 - Maven 3.8+ 
-- MySQL 8.0
+- MySQL Workbench
 - Git
 
 For Docker deployment:
@@ -39,18 +39,14 @@ For Docker deployment:
 
 ```bash
 git clone git@github.com:montelzek/todo-app.git
-cd todoapp
+cd todo-app
 ```
 
 ### 2. Configure Database
 
-Create a MySQL database:
+Open MySQL Workbench and create a database:
 
-```bash
-mysql -u root -p
-```
-
-Then execute:
+Execute:
 
 ```sql
 CREATE DATABASE IF NOT EXISTS todo;
@@ -77,13 +73,13 @@ INSERT INTO priorities (grade, level) VALUES ('High', 1), ('Medium', 2), ('Low',
 
 ### 3. Configure Application Properties
 
-Modify `src/main/resources/application.properties` if needed:
+Modify `src/main/resources/application.properties` according to your MySQL setup:
 
 ```properties
 spring.application.name=todoapp
 spring.datasource.url=jdbc:mysql://localhost:3306/todo?useSSL=false&allowPublicKeyRetrieval=true&createDatabaseIfNotExist=true&autoReconnect=true&useUnicode=true&characterEncoding=UTF-8
-spring.datasource.username=root
-spring.datasource.password=root
+spring.datasource.username=your_mysql_user
+spring.datasource.password=your_mysql_password
 spring.jpa.hibernate.ddl-auto=update
 spring.jpa.properties.hibernate.dialect=org.hibernate.dialect.MySQL8Dialect
 ```
@@ -110,7 +106,7 @@ The application will be available at: http://localhost:8080
 
 ```bash
 git clone git@github.com:montelzek/todo-app.git
-cd todoapp
+cd todo-app
 ```
 
 ### 2. Build the application
