@@ -1,6 +1,6 @@
-# To Do App - Spring Boot & MySQL
+# To Do App - Spring & MySQL
 
-This is a simple web application for managing tasks, built using the Spring Boot framework, Spring Data JPA, Thymeleaf for the frontend, and MySQL as the database.
+This is a simple web application for managing tasks, built using the Spring framework, Spring Data JPA, Thymeleaf for the frontend, and MySQL as the database.
 
 ## Features
 
@@ -10,7 +10,8 @@ This is a simple web application for managing tasks, built using the Spring Boot
 *   **Update Task:** Modify the details of existing tasks.
 *   **Delete Task:** Remove tasks from the list.
 *   **Change Status:** Mark tasks as completed or active (toggle).
-*   **Priorities:** Tasks are associated with priorities (e.g., High, Medium, Low) which are visually indicated.
+*   **Priorities:** Tasks are associated with priorities (e.g., High, Medium, Low) which are visually indicated. <br/><br/>
+![Tasks list](images/list.png) <br/><br/>
 
 ## Technology Stack
 
@@ -129,11 +130,11 @@ The application will be available at: http://localhost:8080
 ### 4. Stop the Docker containers
 
 ```bash
-docker-compose down
+docker compose down
 ```
 
 To also remove volumes:
 
 ```bash
-docker-compose down -v
+docker compose down -v
 ```
